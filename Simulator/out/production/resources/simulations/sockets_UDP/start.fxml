@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="scenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1079.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulations.sockets_UDP.StartController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+            <children>
+                <JFXHamburger fx:id="hamburger" alignment="CENTER" prefHeight="49.0" prefWidth="55.0" styleClass="jfx-hamburger" stylesheets="@../../styles/styles.css" />
+                <Region prefHeight="0.0" prefWidth="765.0" HBox.hgrow="ALWAYS" />
+                <Label alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="5.0" prefHeight="49.0" prefWidth="192.0" text="OS Simulator" textFill="WHITE">
+                    <font>
+                        <Font name="TakaoPGothic" size="20.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="LINUX" size="40" wrappingWidth="32.42856979370117" />
+                    </graphic>
+                </Label>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane prefHeight="652.0" prefWidth="1079.0" style="-fx-background-color: #1a33D5; -fx-background-size: cover;" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="Hbox" prefHeight="664.0" prefWidth="800.0" spacing="25.0">
+                    <padding>
+                        <Insets bottom="50.0" left="30.0" right="50.0" top="50.0" />
+                    </padding>
+                    <children>
+                        <Label contentDisplay="TOP" text="client" textFill="#ebe8e8">
+                            <graphic>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@client.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold Italic" size="26.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" top="50.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label>
+                            <graphic>
+                                <JFXButton fx:id="StartTest" buttonType="RAISED" graphicTextGap="6.0" onAction="#buttonEventHandler" prefHeight="55.0" prefWidth="265.0" ripplerFill="#0000d4" style="-fx-background-color: rgb(0, 192, 239);" text="Start Test" textFill="#fff208">
+                                    <font>
+                                        <Font name="System Bold" size="26.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="25" text="" wrappingWidth="21.428569793701172" />
+                                    </graphic>
+                                </JFXButton>
+                            </graphic>
+                            <HBox.margin>
+                                <Insets top="350.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label alignment="TOP_LEFT" contentDisplay="TOP" text="server" textFill="#f2ecec">
+                            <graphic>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@server.png" />
+                                    </image></ImageView>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold Italic" size="26.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets top="50.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <VBox fx:id="Vbox" alignment="CENTER_RIGHT" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <JFXButton fx:id="socket" buttonType="RAISED" graphicTextGap="6.0" onAction="#socketEventHandler" prefHeight="55.0" prefWidth="265.0" ripplerFill="#ffe013" style="-fx-background-color: #ffe013;" text="Stage 1: Socket" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="25" text="" wrappingWidth="21.428569793701172" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="Bind" buttonType="RAISED" graphicTextGap="6.0" onAction="#bindEventHandler" prefHeight="55.0" prefWidth="265.0" ripplerFill="#0000d4" style="-fx-background-color: #ffe013;" text="Stage 2: Bind" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="25" wrappingWidth="21.428569793701172" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="recieve" buttonType="RAISED" graphicTextGap="6.0" layoutX="10.0" layoutY="313.0" onAction="#recieveEventHandler" prefHeight="55.0" prefWidth="265.0" ripplerFill="#0000d4" style="-fx-background-color: #ffe013;" text="Stage 3: receive" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="25" wrappingWidth="21.428569793701172" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="send" buttonType="RAISED" graphicTextGap="6.0" layoutX="10.0" layoutY="271.0" onAction="#sendEventHandler" prefHeight="55.0" prefWidth="265.0" ripplerFill="#0000d4" style="-fx-background-color: #ffe013;" text="Stage 4: send" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="25" wrappingWidth="21.428569793701172" />
+                            </graphic>
+                            <VBox.margin>
+                                <Insets left="10.0" />
+                            </VBox.margin>
+                        </JFXButton>
+                  <JFXButton fx:id="close" buttonType="RAISED" graphicTextGap="6.0" layoutX="824.0" layoutY="272.0" onAction="#closeEventHandler" prefHeight="55.0" prefWidth="265.0" ripplerFill="#0000d4" style="-fx-background-color: #ffe013;" text="Stage 5: close" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHEVRON_CIRCLE_RIGHT" size="25" wrappingWidth="21.428569793701172" />
+                     </graphic>
+                  </JFXButton>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
